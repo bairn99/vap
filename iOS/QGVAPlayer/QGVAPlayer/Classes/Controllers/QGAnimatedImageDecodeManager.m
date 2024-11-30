@@ -195,7 +195,8 @@
             return ;
         }
         NSError *error;
-        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:_fileInfo.filePath] error:&error];
+        // MARK: 修复文地文件音频播放
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:_fileInfo.filePath] error:&error];
     }
 }
 
